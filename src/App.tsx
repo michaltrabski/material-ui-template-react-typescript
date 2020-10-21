@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { CssBaseline, makeStyles } from "@material-ui/core";
+import Div from "./mui/Div";
+import Header from "./mui/Header";
+
+const useStyle = makeStyles({
+  x: {
+    height: "100px",
+    backgroundColor: "lightBlue",
+  },
+});
 
 function App() {
+  const classes = useStyle();
+  console.log(classes, classes.x);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CssBaseline />
+      <Header />
+      <div className={classes.x}>hello</div>
+      <Div />
+    </>
   );
 }
 
